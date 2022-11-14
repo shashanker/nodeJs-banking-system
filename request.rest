@@ -1,0 +1,33 @@
+GET http://localhost:8000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2hhc2hhbmtlciIsImlhdCI6MTY2ODMyNDI2N30.fqI1RdBxiJUOuhB3XOxhR3UIdBYGPQE8MEcIC7E4HgA
+###
+
+POST http://localhost:8000/user/signup
+Content-Type: application/json
+
+{
+	"last_name":"Vaduka",
+	"first_name": "Shashanker",
+	"title":"Mr",
+	"address":"Downing Street , London",
+	"password": "ab1234cd"
+}
+###
+
+POST http://localhost:8000/user/login
+Content-Type: application/json
+
+{
+    "username" : "Shashanker",
+    "password" : "ab1234cd"
+}
+###
+
+POST http://localhost:8000/deposit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2hhc2hhbmtlciIsImlhdCI6MTY2ODMyNDI2N30.fqI1RdBxiJUOuhB3XOxhR3UIdBYGPQE8MEcIC7E4HgA
+Content-Type: application/json
+
+{
+    "user_id" : 2,
+    "amount" : 1000
+}
